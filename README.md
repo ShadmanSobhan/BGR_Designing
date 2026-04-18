@@ -73,9 +73,14 @@ $$V_{BG} = V_1 + \frac{R_1}{R_0}(V_1 - V_n) = V_1 + \frac{R_1}{R_0} V_T \ln(n)$$
 
 ## BGR Architectures
 
-### Version 1 — Classic BGR (Ideal Current Source)
+### Version 1 — Classic BGR
 
 The bandgap reference (BGR) is implemented using an op-amp, a PMOS current mirror, and three branches that generate complementary temperature-dependent voltages.
+
+**Figure 1: BGR Circuit Realization**
+
+<img src="Images/BGR_CR.png" width="1000">
+
 
 ### 🔹 Branch Description
 
@@ -152,17 +157,27 @@ $
 
 ### Version 2 — Alternate BGR
 
-An improved version reducing the number of branches.
+An improved version that reduces the number of branches. But this version has the same problems too.
+
+**Figure 2: BGR Circuit Realization (Alternate Version)**
+
+<img src="Images/BGR_AV.png" width="1000">
 
 ---
 
 ### Version 3 — Banba BGR (No External Source)
 
-The Banba architecture eliminates the need for any external current source. The op-amp, current mirror, and resistor network are self-contained. Current branches IA, IB, and IC are mirrored from a single Op-Amp-controlled loop:
+The Banba architecture eliminates the limitation that the output voltage must be higher than 1.2V. In this configuration, we will be using the starting circuit, which will be discussed later.
 
-$$I_C = I_A = I_{A1} + I_{A2} = \frac{V_A}{R_0} + \frac{V_B - V_n}{R_3} = \frac{1}{R_0}\left(V_1 + \frac{R_0}{R_3}(V_1 - V_n)\right) = \frac{V_{conv}}{R_0}$$
+**Figure 3: Banba BGR Circuit**
 
-$$V_{BG} = R_2 \cdot I_C = \frac{R_2}{R_0} \cdot V_{conv}$$
+<img src="Images/Banba_BGR.png" width="1000">
+
+Current branches IA, IB, and IC are mirrored from a single Op-Amp-controlled loop:
+
+$I_C = I_A = I_{A1} + I_{A2} = \frac{V_A}{R_0} + \frac{V_B - V_n}{R_3} = \frac{1}{R_0}\left(V_1 + \frac{R_0}{R_3}(V_1 - V_n)\right) = \frac{V_{conv}}{R_0}$
+
+$V_{BG} = R_2 \cdot I_C = \frac{R_2}{R_0} \cdot V_{conv}$
 
 This architecture enables output voltages below the classic ~1.2 V floor (achieved ~800 mV), making it suitable for low-voltage applications. A **startup circuit** is mandatory for this topology.
 

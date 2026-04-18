@@ -217,6 +217,10 @@ When VDD rises from 0, all node voltages start at 0 V. The op-amp inputs fall ou
 
 ### Why the Op-Amp Output Goes High
 
+**Figure 4: Op-Amp Circuit**
+
+<img src="Images/3. SC_OH.png" width="1000">
+
 Transistors P3 and P4 turn fully on. S1OUT is pulled near VSS. P2's gate sits near VDD/2, causing P2 to pull the output toward VDD.
 
 ### Mechanism
@@ -230,6 +234,10 @@ The startup circuit detects this zero-current state and injects current into the
 ### Motivation
 
 The BGR output has high impedance and cannot directly drive loads or supply significant current. The LDO uses the BGR output (V_BG) as its reference to produce a regulated, low-impedance output voltage.
+
+**Figure 5: LDO Circuit**
+
+<img src="Images/5. LDO.png" width="1000">
 
 ### Circuit Mechanism
 

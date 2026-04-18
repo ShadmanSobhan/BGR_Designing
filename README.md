@@ -81,31 +81,21 @@ The bandgap reference (BGR) is implemented using an op-amp, a PMOS current mirro
 
 - **Left Branch (Node A)**  
   A diode-connected BJT produces a base-emitter voltage $V_1$, which exhibits a **CTAT (Complementary-To-Absolute-Temperature)** characteristic:
-  $$
-  V_A = V_1
-  $$
+  $V_A$ = $V_1$
 
 - **Middle Branch (Node C)**  
   A stack of BJTs with emitter area ratio $n$ generates a voltage $V_n$.  
   The op-amp forces:
-  $$
-  V_C = V_A = V_1
-  $$
-
+  $V_C$ = $V_A$ = $V_1$
+  
   This creates a voltage difference across resistor $R_0$:
-  $$
-  V_C - V_D = V_1 - V_n
-  $$
+  $V_C$ - $V_D$ = $V_1$ - $V_n$
 
   The resulting current is:
-  $$
-  I = \frac{V_1 - V_n}{R_0}
-  $$
+  $I = (V_1 - V_n)/R_0$
 
   Since:
-  $$
-  V_1 - V_n = V_T \ln(n)
-  $$
+  $V_1 - V_n = V_T \ln(n)$
   this term is **PTAT (Proportional-To-Absolute-Temperature)**.
 
 ---

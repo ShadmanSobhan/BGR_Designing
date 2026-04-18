@@ -79,7 +79,7 @@ The bandgap reference (BGR) is implemented using an op-amp, a PMOS current mirro
 
 **Figure 1: BGR Circuit Realization**
 
-<img src="Images/BGR_CR.png" width="1000">
+<img src="Images/1. BGR_CR.png" width="1000">
 
 
 ### 🔹 Branch Description
@@ -161,7 +161,7 @@ An improved version that reduces the number of branches. But this version has th
 
 **Figure 2: BGR Circuit Realization (Alternate Version)**
 
-<img src="Images/BGR_AV.png" width="1000">
+<img src="Images/2. BGR_AV.png" width="1000">
 
 ---
 
@@ -171,7 +171,7 @@ The Banba architecture eliminates the limitation that the output voltage must be
 
 **Figure 3: Banba BGR Circuit**
 
-<img src="Images/Banba_BGR.png" width="1000">
+<img src="Images/4. Banba_BGR.png" width="1000">
 
 Current branches IA, IB, and IC are mirrored from a single Op-Amp-controlled loop:
 

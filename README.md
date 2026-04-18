@@ -108,29 +108,20 @@ The op-amp regulates the circuit to maintain equilibrium:
 - If $V_C > V_A$: output increases → PMOS current decreases → $V_C$ falls  
 
 Thus, the system stabilizes at:
-$$
-V_C = V_A = V_1
-$$
+$ V_C = V_A = V_1$
 
 ---
 
 ### 🔹 Output Branch ($V_{BG}$)
 
 The mirrored current flows through resistor $R_1$, producing the bandgap output voltage:
-
-$$
-V_{BG} = V_1 + R_1 \cdot I
-$$
+$V_{BG} = V_1 + R_1 \cdot I$
 
 Substituting $I$:
-$$
-V_{BG} = V_1 + \frac{R_1}{R_0}(V_1 - V_n)
-$$
+$V_{BG} = V_1 + \frac{R_1}{R_0}(V_1 - V_n)$
 
 Using $V_1 - V_n = V_T \ln(n)$:
-$$
-V_{BG} = V_1 + \frac{R_1}{R_0} \cdot V_T \ln(n)
-$$
+$V_{BG} = V_1 + \frac{R_1}{R_0} \cdot V_T \ln(n)$
 
 ---
 
@@ -141,11 +132,10 @@ The output consists of:
 - **CTAT component:** $V_1$  
 - **PTAT component:** $\frac{R_1}{R_0}(V_1 - V_n)$  
 
-$$
-\boxed{
+$\boxed{
 V_{BG} = V_1 \;(\text{CTAT}) + \frac{R_1}{R_0}(V_1 - V_n)\;(\text{PTAT})
 }
-$$
+$
 
 
 

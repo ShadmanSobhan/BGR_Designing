@@ -108,7 +108,8 @@ The op-amp regulates the circuit to maintain equilibrium:
 - If $V_C > V_A$: output increases → PMOS current decreases → $V_C$ falls  
 
 Thus, the system stabilizes at:
-$ V_C = V_A = V_1 $
+
+$V_C = V_A = V_1$
 
 ---
 

@@ -119,9 +119,11 @@ The mirrored current flows through resistor $R_1$, producing the bandgap output 
 $V_{BG} = V_1 + R_1 \cdot I$
 
 Substituting $I$:
+
 $V_{BG} = V_1 + \frac{R_1}{R_0}(V_1 - V_n)$
 
 Using $V_1 - V_n = V_T \ln(n)$:
+
 $V_{BG} = V_1 + \frac{R_1}{R_0} \cdot V_T \ln(n)$
 
 ---

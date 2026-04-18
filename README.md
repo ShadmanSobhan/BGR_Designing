@@ -152,18 +152,13 @@ $
 
 ### Version 2 — Alternate BGR
 
-An improved version replacing the ideal current source with a diode-connected NMOS. The op-amp now directly controls the PMOS mirror through a feedback loop using nodes Va and Vb as its differential inputs. The resistor network (R0, R1, R2) and diode sizing are adjusted to achieve improved line regulation.
-
-**Improvements over Version 1:**
-- Eliminates the ideal current source.
-- Significantly better line regulation (16.46 → 1.149 mV/V typical).
-- Slightly lower startup voltage.
+An improved version reducing the number of branches.
 
 ---
 
 ### Version 3 — Banba BGR (No External Source)
 
-The Banba architecture eliminates the need for any external current source. The op-amp, current mirror, and resistor network are self-contained. Current branches IA, IB, and IC are mirrored from a single op-amp controlled loop:
+The Banba architecture eliminates the need for any external current source. The op-amp, current mirror, and resistor network are self-contained. Current branches IA, IB, and IC are mirrored from a single Op-Amp-controlled loop:
 
 $$I_C = I_A = I_{A1} + I_{A2} = \frac{V_A}{R_0} + \frac{V_B - V_n}{R_3} = \frac{1}{R_0}\left(V_1 + \frac{R_0}{R_3}(V_1 - V_n)\right) = \frac{V_{conv}}{R_0}$$
 

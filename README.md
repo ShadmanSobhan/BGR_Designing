@@ -136,7 +136,7 @@ The output consists of:
 - **PTAT component:** $\frac{R_1}{R_0}(V_1 - V_n)$  
 
 $\boxed{
-V_{BG} = V_1 \;(\text{CTAT}) + \frac{R_1}{R_0}(V_1 - V_n)\;(\text{PTAT})
+V_{BG} = V_1  + \frac{R_1}{R_0}(V_1 - V_n)
 }
 $
 

@@ -75,10 +75,90 @@ $$V_{BG} = V_1 + \frac{R_1}{R_0}(V_1 - V_n) = V_1 + \frac{R_1}{R_0} V_T \ln(n)$$
 
 ### Version 1 — Classic BGR (Ideal Current Source)
 
-The foundational design uses an op-amp with a PMOS current mirror and three branches:
-- **Left branch (V1):** Single diode sets node A to V1 (CTAT).
-- **Middle branch (V_N):** Diode stack sets node C to Vn; op-amp forces Vc = Va, creating a (V1 − Vn) drop across R0.
-- **Right branch (V_BG):** R1 scales the PTAT current to produce the bandgap output.
+The bandgap reference (BGR) is implemented using an op-amp, a PMOS current mirror, and three branches that generate complementary temperature-dependent voltages.
+
+### 🔹 Branch Description
+
+- **Left Branch (Node A)**  
+  A diode-connected BJT produces a base-emitter voltage $V_1$, which exhibits a **CTAT (Complementary-To-Absolute-Temperature)** characteristic:
+  $$
+  V_A = V_1
+  $$
+
+- **Middle Branch (Node C)**  
+  A stack of BJTs with emitter area ratio $n$ generates a voltage $V_n$.  
+  The op-amp forces:
+  $$
+  V_C = V_A = V_1
+  $$
+
+  This creates a voltage difference across resistor $R_0$:
+  $$
+  V_C - V_D = V_1 - V_n
+  $$
+
+  The resulting current is:
+  $$
+  I = \frac{V_1 - V_n}{R_0}
+  $$
+
+  Since:
+  $$
+  V_1 - V_n = V_T \ln(n)
+  $$
+  this term is **PTAT (Proportional-To-Absolute-Temperature)**.
+
+---
+
+### 🔹 Op-Amp Feedback Mechanism
+
+The op-amp regulates the circuit to maintain equilibrium:
+
+- If $V_C < V_A$: output decreases → PMOS current increases → $V_C$ rises  
+- If $V_C > V_A$: output increases → PMOS current decreases → $V_C$ falls  
+
+Thus, the system stabilizes at:
+$$
+V_C = V_A = V_1
+$$
+
+---
+
+### 🔹 Output Branch ($V_{BG}$)
+
+The mirrored current flows through resistor $R_1$, producing the bandgap output voltage:
+
+$$
+V_{BG} = V_1 + R_1 \cdot I
+$$
+
+Substituting $I$:
+$$
+V_{BG} = V_1 + \frac{R_1}{R_0}(V_1 - V_n)
+$$
+
+Using $V_1 - V_n = V_T \ln(n)$:
+$$
+V_{BG} = V_1 + \frac{R_1}{R_0} \cdot V_T \ln(n)
+$$
+
+---
+
+### 🔹 Final Expression
+
+The output consists of:
+
+- **CTAT component:** $V_1$  
+- **PTAT component:** $\frac{R_1}{R_0}(V_1 - V_n)$  
+
+$$
+\boxed{
+V_{BG} = V_1 \;(\text{CTAT}) + \frac{R_1}{R_0}(V_1 - V_n)\;(\text{PTAT})
+}
+$$
+
+
+
 
 **Limitations:**
 - Relies on an ideal current source (not practical).

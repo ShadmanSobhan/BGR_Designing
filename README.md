@@ -245,7 +245,7 @@ The op-amp forces node A (connected to $V_BG$) and node B (the feedback node) to
 
 $V_{out} = I \cdot (R_1 + R_2) = \frac{V_B}{R_2}(R_1 + R_2) = V_{REF}\left(1 + \frac{R_1}{R_2}\right)$
 
-where $V_A = V_B = V_REF$ and VSS = 0 is assumed.
+where $V_A = V_B = V_{REF}$ and VSS = 0 is assumed.
 
 ---
 

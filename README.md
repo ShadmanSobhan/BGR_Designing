@@ -241,7 +241,7 @@ The BGR output has high impedance and cannot directly drive loads or supply sign
 
 ### Circuit Mechanism
 
-The op-amp forces node A (connected to $V_BG$) and node B (the feedback node) to the same voltage. The output voltage is set by the resistor divider R1/R2:
+The op-amp forces node A (connected to $V_{BG}$) and node B (the feedback node) to the same voltage. The output voltage is set by the resistor divider R1/R2:
 
 $V_{out} = I \cdot (R_1 + R_2) = \frac{V_B}{R_2}(R_1 + R_2) = V_{REF}\left(1 + \frac{R_1}{R_2}\right)$
 
